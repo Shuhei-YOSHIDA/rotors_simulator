@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
+#cmake_minimum_required(VERSION 3.12)
 project(rotors_gazebo)
 
 add_definitions(-std=c++11)
@@ -10,7 +11,9 @@ add_definitions(-std=c++11)
 # We need Gazebo version >= 3.0.0 to generate iris.sdf file
 # (gz sdf ... command needs to be available)
 find_package(gazebo REQUIRED)
-find_package(PythonInterp REQUIRED)
+#find_package(PythonInterp REQUIRED)
+find_package(Python)
+find_package(Python3)
 
 if(${gazebo_VERSION_MAJOR} GREATER 2)
     message(STATUS "Building iris.sdf.")
